@@ -1,10 +1,13 @@
 'use client'
 import React, { useState } from 'react';
 import { UseGlobaleCart } from '@/contexts/cartContext';
+import { useRouter } from "next/navigation";
+
 
 const Navbar = () => {
   const { cartItems } = UseGlobaleCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <nav className=" bg-white p-2 shadow-lg sticky top-0 px-10">
@@ -14,7 +17,8 @@ const Navbar = () => {
         </div>
 
         <div className="hidden sm:flex space-x-4">
-          <a href="#" className="text-red-600 text-lg font-bold">{cartItems?.length} Cart</a>
+         
+          <p onClick={()=>router.push('/cart')} className="text-red-600 text-lg font-bold cursor-pointer">{cartItems?.length} Cart</p>
       
         </div>
 

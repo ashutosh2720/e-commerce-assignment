@@ -22,7 +22,7 @@ export const CartContext = createContext();
   };
 
   return (
-    <CartContext.Provider value={{ cartItems,productData, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cartItems,productData,setCartItems, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );
