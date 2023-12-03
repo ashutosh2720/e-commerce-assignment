@@ -1,31 +1,29 @@
 import { UseGlobaleCart } from "@/contexts/cartContext";
+import Image from "next/image";
 import Link from "next/link";
 
 import React from "react";
 
-
-
 const ProductCard = ({ product }) => {
-  const { productData, addToCart, cartItems, removeFromCart } =
-    UseGlobaleCart();
+  const { addToCart, cartItems, removeFromCart } = UseGlobaleCart();
 
-
-
-    function addToCartHandler(e){
-        cartItems.find((item) => item._id === product._id)
-        ? removeFromCart(product._id)
-        : addToCart(product)
-        e.stopPropagation()
-    }
+  function addToCartHandler(e) {
+    cartItems.find((item) => item._id === product._id)
+      ? removeFromCart(product._id)
+      : addToCart(product);
+    e.stopPropagation();
+  }
 
   return (
-    
     <div className="bg-white h-full flex flex-col justify-between cursor-pointer p-4 rounded-lg shadow-md">
-      <Link href={`/${product._id}`}><img
-        className="w-full h-[60%] mb-4 rounded object-cover"
-        src={product.thumbnail}
-        alt={product.name}
-      />
+      <Link href={`/${product._id}`} className="w-full h-[200px]">
+        <Image
+          src={product.thumbnail}
+          alt={product.title}
+          width={1000}
+          height={1000}
+          className="w-full h-full mb-4 rounded object-contain"
+        />
       </Link>
       <div className="flex flex-col justify-between h-[40%]">
         <div>

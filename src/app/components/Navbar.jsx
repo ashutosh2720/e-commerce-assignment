@@ -1,29 +1,46 @@
-'use client'
-import React, { useState } from 'react';
-import { UseGlobaleCart } from '@/contexts/cartContext';
-import Link from 'next/link';
-
-
+"use client";
+import React, { useState } from "react";
+import { UseGlobaleCart } from "@/contexts/cartContext";
+import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
-  const { cartItems,myOrders } = UseGlobaleCart();
+  const { cartItems, myOrders } = UseGlobaleCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
- 
 
   return (
     <nav className=" bg-white p-2 shadow-lg sticky top-0 px-10">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center">
-        <img  className='h-[70px] cursor-pointer' src="https://dilfoods.in/wp-content/uploads/2023/04/Dil-Foods-new-logo.png" alt="" />
-        </div>
+        <Link href={"/"} className="flex items-center">
+          <Image
+            src="https://dilfoods.in/wp-content/uploads/2023/04/Dil-Foods-new-logo.png"
+            alt=""
+            width={200}
+            height={200}
+            className="w-[80px] h-[70px] cursor-pointer"
+            priority={true}
+          />
+        </Link>
 
         <div className="hidden sm:flex space-x-4">
-          <Link href={'/cart'}><p  className="text-red-600 text-lg font-bold cursor-pointer"><span className='relative left-5 top-[-20px] bg-gray-300 rounded-full px-1'>{cartItems.length}</span> Cart</p></Link>
-         
-          <Link href={'/orders'}> <p  className="text-red-600 text-lg font-bold cursor-pointer"><span className='relative left-5 top-[-20px] bg-gray-300 rounded-full px-1'>{myOrders.length}</span> Order</p></Link>
-         
-          
-      
+          <Link href={"/cart"}>
+            <p className="text-red-600 text-lg font-bold cursor-pointer">
+              <span className="relative left-5 top-[-20px] bg-gray-300 rounded-full px-1">
+                {cartItems.length}
+              </span>{" "}
+              Cart
+            </p>
+          </Link>
+
+          <Link href={"/orders"}>
+            {" "}
+            <p className="text-red-600 text-lg font-bold cursor-pointer">
+              <span className="relative left-5 top-[-20px] bg-gray-300 rounded-full px-1">
+                {myOrders.length}
+              </span>{" "}
+              Order
+            </p>
+          </Link>
         </div>
 
         <div className="sm:hidden">
@@ -51,7 +68,9 @@ const Navbar = () => {
 
       {isMenuOpen && (
         <div className="sm:hidden mt-4">
-          <a href="#" className="text-red-600 text-lg font-bold">Cart</a>
+          <a href="#" className="text-red-600 text-lg font-bold">
+            Cart
+          </a>
         </div>
       )}
     </nav>
