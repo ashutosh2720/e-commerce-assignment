@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react';
 import { UseGlobaleCart } from '@/contexts/cartContext';
-import { useRouter } from "next/navigation";
 import Link from 'next/link';
 
 
@@ -9,7 +8,7 @@ import Link from 'next/link';
 const Navbar = () => {
   const { cartItems,myOrders } = UseGlobaleCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter();
+ 
 
   return (
     <nav className=" bg-white p-2 shadow-lg sticky top-0 px-10">
@@ -19,9 +18,9 @@ const Navbar = () => {
         </div>
 
         <div className="hidden sm:flex space-x-4">
-          <Link><p  className="text-red-600 text-lg font-bold cursor-pointer"><span className='relative left-5 top-[-20px] bg-gray-300 rounded-full px-1'>{cartItems.length}</span> Cart</p></Link>
+          <Link href={'/cart'}><p  className="text-red-600 text-lg font-bold cursor-pointer"><span className='relative left-5 top-[-20px] bg-gray-300 rounded-full px-1'>{cartItems.length}</span> Cart</p></Link>
          
-          <Link> <p  className="text-red-600 text-lg font-bold cursor-pointer"><span className='relative left-5 top-[-20px] bg-gray-300 rounded-full px-1'>{myOrders.length}</span> Order</p></Link>
+          <Link href={'/order'}> <p  className="text-red-600 text-lg font-bold cursor-pointer"><span className='relative left-5 top-[-20px] bg-gray-300 rounded-full px-1'>{myOrders.length}</span> Order</p></Link>
          
           
       

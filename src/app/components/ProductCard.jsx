@@ -1,13 +1,15 @@
 import { UseGlobaleCart } from "@/contexts/cartContext";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+
 import React from "react";
+
 
 
 const ProductCard = ({ product }) => {
   const { productData, addToCart, cartItems, removeFromCart } =
     UseGlobaleCart();
 
-    const router = useRouter();
+
 
     function addToCartHandler(e){
         cartItems.find((item) => item._id === product._id)
@@ -17,7 +19,8 @@ const ProductCard = ({ product }) => {
     }
 
   return (
-    <div onClick={()=>router.push(`/${product._id}`)} className="bg-white h-full flex flex-col justify-between cursor-pointer p-4 rounded-lg shadow-md">
+    
+    <Link href={`/${product._id}`} className="bg-white h-full flex flex-col justify-between cursor-pointer p-4 rounded-lg shadow-md">
       <img
         className="w-full h-[60%] mb-4 rounded object-cover"
         src={product.thumbnail}
@@ -41,7 +44,7 @@ const ProductCard = ({ product }) => {
             : "add to cart"}
         </button>
       </div>
-    </div>
+    </Link>
   );
 };
 
