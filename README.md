@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# E-Commerce Website
 
-## Getting Started
+![Project Image](project-image-url)
 
-First, run the development server:
+> A modern e-commerce website built with React Context API and Tailwind CSS.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Table of Contents
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- [Description](#description)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## Description
 
-To learn more about Next.js, take a look at the following resources:
+The E-Commerce Website is a fully functional online store that provides users with a seamless shopping experience. It is built using React and leverages the Context API for state management. The user interface is styled using Tailwind CSS, ensuring a clean and responsive design.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Features
 
-## Deploy on Vercel
+- **Product Listings:** Browse a wide range of products with detailed information.
+- **Shopping Cart:** Add products to the cart and manage your shopping list.
+- **User Authentication:** Register, login, and manage your user account.
+- **Order Processing:** Complete the checkout process with order confirmation.
+- **Responsive Design:** Ensures a consistent experience across devices.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Tech Stack
+
+- **Next Js:** A JavaScript library for building user interfaces.
+- **React Context API:** State management for React applications.
+- **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
+
+---
+
+## Product Listing page
+![image](https://github.com/ashutosh2720/e-commerce-assignment/assets/109720375/d450e22b-b015-45b8-99be-c598e5f7031a)
+
+
+
+
+## cart page 
+![image](https://github.com/ashutosh2720/e-commerce-assignment/assets/109720375/793f56da-b311-4d92-98e4-0d191a61cbdb)
+
+
+
+
+## checkout page
+![image](https://github.com/ashutosh2720/e-commerce-assignment/assets/109720375/155fa26f-47df-49ea-9948-392601d37432)
+
+
+
+
+
+
+## payment page
+
+
+
+
+
+
+## order summary page
+
+
