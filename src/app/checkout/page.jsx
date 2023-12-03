@@ -131,7 +131,7 @@ const Page = () => {
             <h3 className="text-xl font-bold">Total Price: {totalPrice}</h3>
             
               <button
-                className="checkout-btn bg-green-500 text-white py-2 px-4 rounded mt-4"
+                className="checkout-btn bg-red-500 text-white py-2 px-4 rounded mt-4"
                 onClick={makePayment}
               >
                 <h4>Proceed to Payment</h4>
