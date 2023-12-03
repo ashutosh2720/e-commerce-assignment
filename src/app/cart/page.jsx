@@ -1,10 +1,12 @@
 'use client'
 import React, { useState } from 'react';
 import { UseGlobaleCart } from '@/contexts/cartContext';
+import { useRouter } from 'next/navigation';
+
 
 const Page = () => {
-  const { cartItems, setCartItems } = UseGlobaleCart();
-  const [cartQuantities, setCartQuantities] = useState({});
+  const { cartItems,removeFromCart,cartQuantities,setCartQuantities, setCartItems } = UseGlobaleCart();
+  const router = useRouter()
 
   const handleIncrementQuantity = (itemId) => {
     setCartQuantities((prevQuantities) => ({
@@ -20,14 +22,11 @@ const Page = () => {
     }));
   };
 
-  const handleRemoveItem = (itemId) => {
-    const updatedCart = cartItems.filter((item) => item.id !== itemId);
-    setCartItems(updatedCart);
-  };
+
 
   const handleCheckout = () => {
-    // Placeholder for checkout logic
-    alert('Checkout functionality will be implemented here.');
+    router.push('/checkout')
+
   };
 
   const calculateTotalPrice = () => {
@@ -41,10 +40,9 @@ const Page = () => {
 
   return (
     <div className="min-h-screen w-full flex flex-wrap items-center justify-center p-4">
-      <h1 className="text-3xl font-bold mb-8">Shopping Cart</h1>
-
+      <h1 className="text-3xl font-bold text-start mb-8">Shopping Cart</h1>
       {cartItems.length === 0 ? (
-        <p className="text-gray-600">Your cart is empty.</p>
+        <span className="text-gray-600 text-3xl">Your cart is empty.</span>
       ) : (
         <div className="w-full">
           {/* Cart Items */}
@@ -81,7 +79,7 @@ const Page = () => {
                       <div className="flex items-center">
                         <p className="mx-4">$ {item.price * (cartQuantities[item.id] || 0)}</p>
                         <button
-                          onClick={() => handleRemoveItem(item.id)}
+                          onClick={() => removeFromCart(item._id)}
                           className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded"
                         >
                           Remove

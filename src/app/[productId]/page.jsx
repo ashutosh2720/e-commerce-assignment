@@ -19,8 +19,8 @@ const page = ({params:{productId}}) => {
         <div className="flex-shrink-0 w-48 md:w-64 lg:w-96 xl:w-96">
           <div className="relative w-[250px] h-38 sm:h-64 md:h-80 lg:h-96 xl:h-96 mb-4">
             <Image
-              src={singleProduct.thumbnail}
-              alt={singleProduct.title}
+              src={singleProduct?.thumbnail}
+              alt={singleProduct?.title}
               width={100}
               height={100}
               layout="responsive"
@@ -30,20 +30,20 @@ const page = ({params:{productId}}) => {
         </div>
 
         <div className="flex-grow ml-4">
-          <h1 className="text-3xl font-bold mb-2">{singleProduct.title}</h1>
-          <h1 className="text-2xl font mb-2"><span className='text-2xl'>Brand:</span>{singleProduct.brand}</h1>
-          <p className="text-gray-700 mb-4">Description  : {singleProduct.description}</p>
-          <p className="text-lg font-bold">Rating  : {singleProduct.rating}</p>
+          <h1 className="text-3xl font-bold mb-2">{singleProduct?.title}</h1>
+          <h1 className="text-2xl font mb-2"><span className='text-2xl'>Brand:</span>{singleProduct?.brand}</h1>
+          <p className="text-gray-700 mb-4">Description  : {singleProduct?.description}</p>
+          <p className="text-lg font-bold">Rating  : {singleProduct?.rating}</p>
 
 
           <div className="flex items-center justify-between mb-4">
-            <p className="text-lg font-bold">Price : $ {singleProduct.price}/-</p>
+            <p className="text-lg font-bold">Price : $ {singleProduct?.price}/-</p>
           </div>
           <button
           className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded self-center"
           onClick={addToCartHandler}
         >
-          {cartItems.find((item) => item._id === singleProduct._id)
+          {cartItems.find((item) => item._id === singleProduct?._id)
             ? "remove from cat "
             : "add to cart"}
         </button>

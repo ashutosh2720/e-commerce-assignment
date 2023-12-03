@@ -13,12 +13,14 @@ const Navbar = () => {
     <nav className=" bg-white p-2 shadow-lg sticky top-0 px-10">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#" className="text-red-600 text-lg font-bold"><img className='h-[70px]' src="https://dilfoods.in/wp-content/uploads/2023/04/Dil-Foods-new-logo.png" alt="" /></a>
+        <img onClick={()=>router.push('/')} className='h-[70px] cursor-pointer' src="https://dilfoods.in/wp-content/uploads/2023/04/Dil-Foods-new-logo.png" alt="" />
         </div>
 
         <div className="hidden sm:flex space-x-4">
          
           <p onClick={()=>router.push('/cart')} className="text-red-600 text-lg font-bold cursor-pointer">{cartItems?.length} Cart</p>
+          <p onClick={()=>router.push('/orders')} className="text-red-600 text-lg font-bold cursor-pointer">{} Order</p>
+          <p onClick={()=>router.push('/cart')} className="text-red-600 text-lg font-bold cursor-pointer">{} payment</p>
       
         </div>
 

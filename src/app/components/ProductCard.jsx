@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
     }
 
   return (
-    <div onClick={()=>router.push(`/${product._id}`)} className="bg-white h-full flex flex-col justify-between p-4 rounded-lg shadow-md">
+    <div onClick={()=>router.push(`/${product._id}`)} className="bg-white h-full flex flex-col justify-between cursor-pointer p-4 rounded-lg shadow-md">
       <img
         className="w-full h-[60%] mb-4 rounded object-cover"
         src={product.thumbnail}
