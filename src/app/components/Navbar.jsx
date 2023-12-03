@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="hidden sm:flex space-x-4">
           <Link href={'/cart'}><p  className="text-red-600 text-lg font-bold cursor-pointer"><span className='relative left-5 top-[-20px] bg-gray-300 rounded-full px-1'>{cartItems.length}</span> Cart</p></Link>
          
-          <Link href={'/order'}> <p  className="text-red-600 text-lg font-bold cursor-pointer"><span className='relative left-5 top-[-20px] bg-gray-300 rounded-full px-1'>{myOrders.length}</span> Order</p></Link>
+          <Link href={'/orders'}> <p  className="text-red-600 text-lg font-bold cursor-pointer"><span className='relative left-5 top-[-20px] bg-gray-300 rounded-full px-1'>{myOrders.length}</span> Order</p></Link>
          
           
       
