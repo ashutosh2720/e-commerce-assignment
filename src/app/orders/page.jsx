@@ -1,10 +1,10 @@
 'use client'
 import { UseGlobaleCart } from "@/contexts/cartContext";
-import { useRouter } from "next/navigation";
+import  {useRouter}  from "next/navigation";
 import React from "react";
 
 
-const page = () => {
+const Page = () => {
   const { myOrders } = UseGlobaleCart();
   const router = useRouter()
   console.log(myOrders)
@@ -15,7 +15,7 @@ const page = () => {
       {myOrders.length ? (
         myOrders.map((order) => (
         
-            <div className="orders border p-4 rounded my-4 cursor-pointer">
+            <div key ={order._id} className="orders border p-4 rounded my-4 cursor-pointer">
              
               <b>
                 <p>{order.title}</p>
@@ -39,4 +39,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

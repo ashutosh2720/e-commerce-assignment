@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react'
 
 
-const page = () => {
+const Page = () => {
     const {addresses,setMyOrders,calculateTotalPrice,selectAddress,cartItems,setCartItems, editAddress, deleteAddress} = UseGlobaleCart()
     const selectedAddress = addresses?.find((address) => address.isAddressSelected)
     const router = useRouter()
@@ -145,4 +145,4 @@ console.log(addresses)
    
 
 
-export default page
+export default Page

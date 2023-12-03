@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React from 'react'
 
 
-const page = ({params:{productId}}) => {
+const Page = ({params:{productId}}) => {
     const {productData,cartItems,addToCart,removeFromCart} = UseGlobaleCart() 
     const singleProduct = productData.find((product)=>product._id===productId)
     function addToCartHandler(e){
@@ -30,7 +30,7 @@ const page = ({params:{productId}}) => {
         </div>
 
         <div className="flex-grow ml-4">
-          <h1 className="text-3xl font-bold mb-2">{singleProduct?.title}</h1>
+          <h1 className="text-3xl font-bold mb-2">{singleProduct.title}</h1>
           <h1 className="text-2xl font mb-2"><span className='text-2xl'>Brand:</span>{singleProduct?.brand}</h1>
           <p className="text-gray-700 mb-4">Description  : {singleProduct?.description}</p>
           <p className="text-lg font-bold">Rating  : {singleProduct?.rating}</p>
@@ -53,4 +53,4 @@ const page = ({params:{productId}}) => {
   )
 }
 
-export default page
+export default Page

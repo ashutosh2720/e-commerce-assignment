@@ -2,7 +2,7 @@
 import { UseGlobaleCart } from '@/contexts/cartContext'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
     const { addresses, editAddress, deleteAddress, formData, saveAddress, handleInputChange, editIndex, addAddress } = UseGlobaleCart()
 
   return (
@@ -89,4 +89,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
