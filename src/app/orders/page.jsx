@@ -1,12 +1,11 @@
 'use client'
 import { UseGlobaleCart } from "@/contexts/cartContext";
-import  {useRouter}  from "next/navigation";
+import Link from "next/link";
 import React from "react";
 
 
 const Page = () => {
   const { myOrders } = UseGlobaleCart();
-  const router = useRouter()
   console.log(myOrders)
   return (
     <div className="my-orders-main">
@@ -29,9 +28,11 @@ const Page = () => {
       ) : (
         <div className="no-order-found flex flex-col justify-center items-center">
           <h1 className="text-3xl font-bold">No Order Found</h1>
-            <button onClick={()=>router.push('/')} className="go-to-shop bg-red-500 text-white py-2 px-4 rounded mt-4">
+          <Link href={'/'}>
+            <button className="go-to-shop bg-red-500 text-white py-2 px-4 rounded mt-4">
               Go to Shop
             </button>
+            </Link>
          
         </div>
       )}

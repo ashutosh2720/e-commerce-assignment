@@ -20,12 +20,13 @@ const ProductCard = ({ product }) => {
 
   return (
     
-    <Link href={`/${product._id}`} className="bg-white h-full flex flex-col justify-between cursor-pointer p-4 rounded-lg shadow-md">
-      <img
+    <div className="bg-white h-full flex flex-col justify-between cursor-pointer p-4 rounded-lg shadow-md">
+      <Link href={`/${product._id}`}><img
         className="w-full h-[60%] mb-4 rounded object-cover"
         src={product.thumbnail}
         alt={product.name}
       />
+      </Link>
       <div className="flex flex-col justify-between h-[40%]">
         <div>
           <h2 className="text-lg font-bold mb-2">{product.title}</h2>
@@ -44,7 +45,7 @@ const ProductCard = ({ product }) => {
             : "add to cart"}
         </button>
       </div>
-    </Link>
+    </div>
   );
 };
 
