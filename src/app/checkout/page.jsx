@@ -78,7 +78,7 @@ const Page = () => {
           <div className="address w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-4 md:mb-0">
             <h1 className="text-2xl font-bold mb-4">Address</h1>
             <button
-              className='add-new-address bg-blue-500 text-white py-2 px-4 rounded mb-4'
+              className='add-new-address bg-red-500 text-white py-2 px-4 rounded mb-4'
               onClick={() => { router.push('/address') }}
             >
               Add New Address

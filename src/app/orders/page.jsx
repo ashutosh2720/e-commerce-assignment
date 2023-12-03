@@ -29,7 +29,7 @@ const Page = () => {
       ) : (
         <div className="no-order-found flex flex-col justify-center items-center">
           <h1 className="text-3xl font-bold">No Order Found</h1>
-            <button onClick={()=>router.push('/')} className="go-to-shop bg-blue-500 text-white py-2 px-4 rounded mt-4">
+            <button onClick={()=>router.push('/')} className="go-to-shop bg-red-500 text-white py-2 px-4 rounded mt-4">
               Go to Shop
             </button>
          
