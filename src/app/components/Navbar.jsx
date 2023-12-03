@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 
 const Navbar = () => {
-  const { cartItems } = UseGlobaleCart();
+  const { cartItems,myOrders } = UseGlobaleCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
@@ -18,9 +18,9 @@ const Navbar = () => {
 
         <div className="hidden sm:flex space-x-4">
          
-          <p onClick={()=>router.push('/cart')} className="text-red-600 text-lg font-bold cursor-pointer">{cartItems?.length} Cart</p>
-          <p onClick={()=>router.push('/orders')} className="text-red-600 text-lg font-bold cursor-pointer">{} Order</p>
-          <p onClick={()=>router.push('/cart')} className="text-red-600 text-lg font-bold cursor-pointer">{} payment</p>
+          <p onClick={()=>router.push('/cart')} className="text-red-600 text-lg font-bold cursor-pointer"><span className='relative left-5 top-[-20px] bg-gray-300 rounded-full px-1'>{cartItems.length}</span> Cart</p>
+          <p onClick={()=>router.push('/orders')} className="text-red-600 text-lg font-bold cursor-pointer"><span className='relative left-5 top-[-20px] bg-gray-300 rounded-full px-1'>{myOrders.length}</span> Order</p>
+          
       
         </div>
 

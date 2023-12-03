@@ -1,14 +1,21 @@
 'use client'
 import { UseGlobaleCart } from '@/contexts/cartContext'
+import { useRouter } from 'next/router'
 import React from 'react'
+
 
 const Page = () => {
     const { addresses, editAddress, deleteAddress, formData, saveAddress, handleInputChange, editIndex, addAddress } = UseGlobaleCart()
 
+    function formHandler(){
+      e.preventDefault()
+      editIndex === -1 ? addAddress : saveAddress
+
+    }
   return (
     <div className='address-container'>
     <div className="form-data">
-      <form onSubmit={editIndex === -1 ? addAddress : saveAddress} className="flex flex-col space-y-4">
+      <form onSubmit={formHandler} className="flex flex-col space-y-4">
         <input
           type="text"
           name="name"

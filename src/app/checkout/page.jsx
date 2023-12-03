@@ -12,7 +12,7 @@ const Page = () => {
 
     const totalPrice = calculateTotalPrice()
     
-console.log(addresses)
+// console.log(addresses)
     useEffect(() => {
         const script = document.createElement("script");
         script.src = "https://checkout.razorpay.com/v1/checkout.js";
